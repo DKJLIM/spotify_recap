@@ -21,8 +21,7 @@ def test():
             client_id=client_id,
             client_secret=client_secret,
             redirect_uri=redirect_uri,
-            scope=scope,
-            username=username)
+            scope=scope)
 
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
@@ -55,7 +54,7 @@ def test():
 
         before = played_at
 
-    df = pd.Dataframe()
+    df = pd.DataFrame()
     for idx, item in enumerate(tracks, start=1):
         track = item['track']
         played_at = item['played_at']
